@@ -1,24 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import Economy from "./components/Economy";
+import Footer from "./components/Footer";
+import Geography from "./components/Geography";
+import Header from "./components/Header";
+import History from "./components/History";
+import Home from "./components/Home";
+import {BrowserRouter,Routes,Route } from "react-router-dom"
+
+
+import Culture from "./components/Culture";
+
+
+
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+    <Header/>
+      <Routes>
+        <Route path="/" element={<Home/>}/>
+        <Route path="/history" element={<History/>}/>
+        <Route path="/geography" element={<Geography/>}/>
+        <Route path="/economy" element={<Economy/>}/>
+        <Route path="/culture" element={<Culture/>}/>
+        
+
+
+      </Routes>
+      <Footer/>
+    </BrowserRouter>
+
   );
 }
 
